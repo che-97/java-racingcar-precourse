@@ -3,12 +3,12 @@ package racingcar.model;
 import racingcar.constant.Sign;
 
 public class Car {
-
+    private static final int STANDARD_ENGIN = 3;
     private final CarName name;
-    private int headway;
+    private Headway headway;
 
     Car(String carName) {
-        this.headway = 0;
+        this.headway = new Headway();
         this.name = this.mapCarName(carName);
     }
 
@@ -21,31 +21,19 @@ public class Car {
     }
 
     public int getHeadway() {
-        return this.headway;
+        return this.headway.getHeadway();
     }
 
     public void drive(int engine) {
-        if (engine > 3) {
-            addHeadway();
+        if (engine > STANDARD_ENGIN) {
+            this.headway.addHeadway();
         }
-    }
-
-    private void addHeadway() {
-        this.headway += 1;
-    }
-
-    private String getHeadwaySign() {
-        StringBuffer sign = new StringBuffer("");
-        for (int repeat = 0; repeat < getHeadway(); repeat++) {
-            sign.append(Sign.HEADWAY_SIGN.getSign());
-        }
-        return sign.toString();
     }
 
     public String getStatus() {
         StringBuffer status = new StringBuffer(getCarName());
         status.append(Sign.CONNECTION_SIGN.getSign());
-        status.append(getHeadwaySign());
+        status.append(this.headway.getHeadwaySign());
         return status.toString();
     }
 }
