@@ -1,12 +1,12 @@
 package racingcar.model;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import racingcar.constant.ErrorMessage;
 import racingcar.constant.Sign;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class CarsTest {
 
@@ -82,6 +82,6 @@ public class CarsTest {
         cars.carDrive(2, 7);
         // Then
         assertThat(cars.getWinner())
-            .isEqualTo("woni"+Sign.WINNER_JOIN_SIGN.getSign() +"jun");
+            .isEqualTo("woni" + Sign.WINNER_JOIN_SIGN.getSign() + "jun");
     }
 }

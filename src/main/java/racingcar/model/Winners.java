@@ -15,7 +15,7 @@ public class Winners {
     }
 
     public void add(Car car) {
-        if(car.isEqualHeaday(this.maxHeadway.getHeadway())){
+        if (car.isEqualHeaday(this.maxHeadway.getHeadway())) {
             this.winner.add(car.getCarName());
         }
     }

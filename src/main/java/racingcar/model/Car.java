@@ -5,6 +5,7 @@ import racingcar.constant.ErrorMessage;
 import racingcar.constant.Sign;
 
 public class Car {
+
     private final CarName name;
     private Headway headway;
 

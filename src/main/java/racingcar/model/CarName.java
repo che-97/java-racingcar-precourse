@@ -1,5 +1,6 @@
 package racingcar.model;
 
+import racingcar.constant.Digit;
 import racingcar.constant.ErrorMessage;
 
 public class CarName {
@@ -8,7 +9,7 @@ public class CarName {
 
     CarName(String carName) {
         validateCarNameIsEmpty(carName);
-        validateCarNameLegnth(carName);
+        validateCarNameLength(carName);
         this.carName = carName.trim();
     }
 
@@ -18,8 +19,8 @@ public class CarName {
         }
     }
 
-    private void validateCarNameLegnth(String carName) {
-        if (carName.trim().length() > 5) {
+    private void validateCarNameLength(String carName) {
+        if (carName.trim().length() > Digit.MAX_CAR_NAME_LENGTH.getNumber()) {
             throw new IllegalArgumentException(ErrorMessage.WRONG_CAR_NAME.getMessage());
         }
     }

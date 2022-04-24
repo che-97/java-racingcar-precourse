@@ -32,7 +32,7 @@ public class Headway {
     }
 
     public void setMax(int headway) {
-        if(this.headway < headway){
+        if (this.headway < headway) {
             this.headway = headway;
         }
     }

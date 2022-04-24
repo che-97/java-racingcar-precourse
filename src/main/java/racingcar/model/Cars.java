@@ -1,6 +1,5 @@
 package racingcar.model;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import racingcar.constant.ErrorMessage;
@@ -12,14 +11,13 @@ public class Cars {
 
     public Cars(String carNames) {
         validateCarNamesIsEmpty(carNames);
-
         this.cars = this.mapCars(carNames);
     }
 
     private List<Car> mapCars(String carNames) {
         List<Car> cars = new ArrayList<>();
         for (String carName : carNames.split(Sign.SPLIT_SIGN.getSign())) {
-            validateCarNamesIsEqual(cars,carName);
+            validateCarNamesIsEqual(cars, carName);
             cars.add(new Car(carName));
         }
         return cars;
@@ -31,8 +29,8 @@ public class Cars {
         }
     }
 
-    private void validateCarNamesIsEqual(List<Car> cars,String carName) {
-        for (Car car: cars) {
+    private void validateCarNamesIsEqual(List<Car> cars, String carName) {
+        for (Car car : cars) {
             car.validateCarNamesIsEqual(carName);
         }
     }

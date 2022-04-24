@@ -5,6 +5,7 @@ public enum Sign {
     WINNER_JOIN_SIGN(", "),
     HEADWAY_SIGN("-"),
     CONNECTION_SIGN(" : ");
+
     private final String sign;
 
     Sign(String sign) {

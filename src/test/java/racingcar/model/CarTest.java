@@ -1,10 +1,10 @@
 package racingcar.model;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import racingcar.constant.Sign;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CarTest {
 
@@ -54,6 +54,6 @@ public class CarTest {
         pobiCar.drive(movingForward);
         //then
         assertThat(pobiCar.getStatus())
-            .isEqualTo(carName+ Sign.CONNECTION_SIGN.getSign()+Sign.HEADWAY_SIGN.getSign());
+            .isEqualTo(carName + Sign.CONNECTION_SIGN.getSign() + Sign.HEADWAY_SIGN.getSign());
     }
 }
