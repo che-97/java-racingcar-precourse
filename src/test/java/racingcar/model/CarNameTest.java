@@ -28,7 +28,7 @@ public class CarNameTest {
         // When & Then
         assertThatThrownBy(() -> new CarName(carName))
             .isInstanceOf(IllegalArgumentException.class)
-            .hasMessage(ErrorMessage.WRONG_CAR_NAME.getMessage());
+            .hasMessage(ErrorMessage.EMPTY_CAR_NAME.getMessage());
     }
 
     @Test

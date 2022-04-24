@@ -1,30 +1,39 @@
 package racingcar.model;
 
+import racingcar.constant.Digit;
 import racingcar.constant.Sign;
 
 public class Headway {
 
     private int headway;
-    private static final int INIT_HEADWAY = 0;
-    private static final int ADD_HEADWAY = 1;
 
     Headway() {
-        this.headway = INIT_HEADWAY;
+        this.headway = Digit.ZERO.getNumber();
     }
 
     public int getHeadway() {
         return this.headway;
     }
 
+    public boolean isEqual(int headway) {
+        return this.headway == headway;
+    }
+
     public void addHeadway() {
-        this.headway += ADD_HEADWAY;
+        this.headway++;
     }
 
     public String getHeadwaySign() {
         StringBuffer sign = new StringBuffer("");
-        for (int repeat = INIT_HEADWAY; repeat < this.getHeadway(); repeat++) {
+        for (int repeat = Digit.ZERO.getNumber(); repeat < this.getHeadway(); repeat++) {
             sign.append(Sign.HEADWAY_SIGN.getSign());
         }
         return sign.toString();
+    }
+
+    public void setMax(int headway) {
+        if(this.headway < headway){
+            this.headway = headway;
+        }
     }
 }

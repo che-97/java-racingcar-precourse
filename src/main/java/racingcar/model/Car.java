@@ -1,9 +1,10 @@
 package racingcar.model;
 
+import racingcar.constant.Digit;
+import racingcar.constant.ErrorMessage;
 import racingcar.constant.Sign;
 
 public class Car {
-    private static final int STANDARD_ENGIN = 3;
     private final CarName name;
     private Headway headway;
 
@@ -25,7 +26,7 @@ public class Car {
     }
 
     public void drive(int engine) {
-        if (engine > STANDARD_ENGIN) {
+        if (engine > Digit.STANDARD_ENGIN.getNumber()) {
             this.headway.addHeadway();
         }
     }
@@ -35,5 +36,15 @@ public class Car {
         status.append(Sign.CONNECTION_SIGN.getSign());
         status.append(this.headway.getHeadwaySign());
         return status.toString();
+    }
+
+    public boolean isEqualHeaday(int maxHeadway) {
+        return this.headway.isEqual(maxHeadway);
+    }
+
+    public void validateCarNamesIsEqual(String carNames) {
+        if (this.name.isEqual(carNames)) {
+            throw new IllegalArgumentException(ErrorMessage.OVERLAP_CAR_NAME.getMessage());
+        }
     }
 }
